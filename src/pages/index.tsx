@@ -1,4 +1,5 @@
 import React, { FormEvent, useState } from "react"
+import nobodyImage from '@/images/semperfil.jpg'
 
 function Home() {
   interface Equipment {
@@ -234,7 +235,7 @@ function Home() {
           <h2>{currentUserData?.UserID} - {currentUserData?.CardName}</h2>
         </div>
         <img
-          src={image}
+          src={image != ''?image:nobodyImage.src}
           alt="SEM FOTO"
         />
       </div>
