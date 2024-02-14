@@ -1,3 +1,6 @@
 {
-    "type":"module"
+    "type": "module",
+    "dependencies": {
+        "pkg": "^5.8.1"
+    }
 }
