@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from "react"
 import nobodyImage from '@/images/semperfil.jpg'
+import logoImage from '@/images/logo.png'
 
 function Home() {
   interface Equipment {
@@ -155,7 +156,9 @@ function Home() {
     <main className="TelaPrincipal">
       <form className="Formulario">
         
-        <div className="Logotipo"></div>
+        <div className="Logotipo">
+          <img src={logoImage.src} alt="logo"/>
+        </div>
         
         <div className="Campos">
           <input
@@ -185,6 +188,7 @@ function Home() {
             }
             placeholder="Senha"
             className="Texto1"
+            type="password"
           ></input>
         </div>
 
