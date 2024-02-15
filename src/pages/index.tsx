@@ -1,6 +1,8 @@
 import React, { FormEvent, useState } from "react"
 import nobodyImage from '@/images/semperfil.jpg'
 import logoImage from '@/images/logo.png'
+import { toast, ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 function Home() {
   interface Equipment {
@@ -45,7 +47,7 @@ function Home() {
     const url: string = `http://${equipment.ip}/cgi-bin/recordFinder.cgi?action=doSeekFind&name=AccessControlCard&count=1000`
 
     try {
-      const response = await fetch("http://localhost:4000/sendEquipData", {
+      const response = await toast.promise(fetch("http://localhost:4000/sendEquipData", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,6 +89,10 @@ function Home() {
 
           console.log(users_array)
           setUsers(users_array)
+        }), {
+          pending: 'Estabelecendo conexão...',
+          error: 'Falha na conexão!',
+          success: 'Conexão bem-sucedida!'
         })
     } catch (e) {
       console.error(`Erro: ${e}`)
@@ -131,7 +137,7 @@ function Home() {
     const url: string = `http://${equipment.ip}/cgi-bin/AccessFace.cgi?action=list&UserIDList[0]=${id}`
 
       try{
-        const response = await fetch('http://localhost:4000/getUserByID', {
+        const response = await toast.promise(fetch('http://localhost:4000/getUserByID', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -144,7 +150,11 @@ function Home() {
           }),
         })
         .then((res)=> res.json())
-        .then((data)=> setImage(data.image))
+        .then((data)=> setImage(data.image)), {
+          pending: 'Buscando registros...',
+          error: 'Erro na busca de registros!',
+          success: 'Busca bem-sucedida!'
+        })
 
       }catch(e){
         console.error(`Erro na requisição: ${e}`)
@@ -243,6 +253,19 @@ function Home() {
           alt="SEM FOTO"
         />
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        className="Mensagem"
+      />
       </main>
     </>
   )

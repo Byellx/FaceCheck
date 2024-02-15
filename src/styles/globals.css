@@ -5,13 +5,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: #363636;
 }
 
 .TelaPrincipal{
     height: 100vh;
     width: 100vw;
     display: flex;
+    background-color: #363636;
 }
 
 .Formulario{
@@ -155,4 +155,71 @@
     width: auto;
     background-color: #00A335;
     border: 3px solid #000;
+}
+
+.Mensagem{
+    background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    .TelaPrincipal{
+        flex-direction: column;
+    }
+    
+    .Formulario{
+        height: 40vh;
+        width: 100vw;
+    }
+    
+    .Formulario .Logotipo{
+        height: 20%;
+        width: 100%;
+    }
+    
+    .Formulario .Logotipo img{
+        width: 80%;
+        height: auto;
+    }
+    
+    .Formulario .Campos{
+        width: 100%;
+        height: 20%;
+    }
+    
+    .Formulario .Campos .Texto1{
+        height: 60%;
+        width: 75%;
+    }
+    
+    .Formulario .Campos .Select{
+        height: 60%;
+        width: 75%;
+        font-size: 20px;
+    }
+    
+    .Formulario .Campos .Select select, .Formulario .Campos .Select input{
+        height: 100%;
+    }
+    
+    .Formulario .Campos .Select select{
+        width: 30%;
+    }
+    
+    .Formulario .Campos .Select input{
+        width: 70%;
+    }
+      
+    .Formulario .Campos .Select select option{
+        width: 25%;
+    }
+    
+    .Formulario .Campos .Botoes .btn{
+        height: 60%;
+        width: 70%;
+    }
+    
+    .Resultados{
+        height: 60vh;
+        width: 100vw;
+    }
 }
