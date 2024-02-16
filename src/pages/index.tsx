@@ -265,6 +265,7 @@ function Home() {
         pauseOnHover
         theme="dark"
         className="Mensagem"
+        limit={1}
       />
       </main>
     </>
