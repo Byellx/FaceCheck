@@ -34,14 +34,7 @@ cd seu-repositorio
 ```
 
 ### **2️⃣ Instalar Dependências**
-#### Backend:
 ```bash
-cd backend
-npm install
-```
-#### Frontend:
-```bash
-cd frontend
 npm install
 ```
 
@@ -52,6 +45,9 @@ node server.js
 
 ### **4️⃣ Iniciar o Frontend**
 ```bash
-npm start
+npm run dev
 ```
 
+### **5️⃣ Vídeo de Demonstração**
+
+Link: https://encurtador.com.br/WlZBg
